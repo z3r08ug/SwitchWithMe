@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindFriendsActivity">
+
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/mainAppBar"/>
+
+    <TextView
+        android:id="@+id/tvLookingFor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Looking For:"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:layout_below="@id/mainAppBar"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:id="@+id/ivGuys"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvLookingFor"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_male"
+        android:onClick="search"/>
+
+    <ImageView
+        android:id="@+id/ivGirls"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivGuys"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_female"
+        android:onClick="search"/>
+
+    <ImageView
+        android:id="@+id/ivBoth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivGirls"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_both"
+        android:onClick="search"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvFriendList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainAppBar"
+        android:visibility="gone"/>
+    <Button
+        android:id="@+id/btnReset"
+        android:text="Reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="resetSearch"
+        android:visibility="gone"/>
+
+</RelativeLayout>
