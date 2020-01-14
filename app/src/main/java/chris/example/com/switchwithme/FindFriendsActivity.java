@@ -1,12 +1,12 @@
 package chris.example.com.switchwithme;
 
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -136,16 +136,6 @@ public class FindFriendsActivity extends AppCompatActivity
                     
                     if (!both && users.size() > 0)
                     {
-                        int index = -1;
-//                        for (int i = 0; i < users.size(); i++)
-//                        {
-//                            if (users.get(i).getInfo().get("userId").equals(currUserId))
-//                            {
-//                                index = i;
-//                            }
-//                        }
-//                        if (index != -1)
-//                            users.remove(index);
                         adapter = new UserAdapter(users);
                         rvFriendsList.setAdapter(adapter);
                     }

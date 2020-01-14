@@ -12,7 +12,8 @@
         android:layout_weight="3"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="25sp"/>
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/tvGender"
@@ -20,7 +21,8 @@
         android:layout_weight="3"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="25sp"/>
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/tvFriendCode"
@@ -28,6 +30,7 @@
         android:layout_weight="3"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="25sp"/>
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"/>
 
 </LinearLayout>

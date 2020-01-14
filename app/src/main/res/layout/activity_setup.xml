@@ -60,60 +60,20 @@
         android:text="Enter Friend Code:"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_below="@id/btnMale"/>
+        android:layout_below="@id/btnFemale"/>
 
     <EditText
-        android:id="@+id/etFriendCode1"
-        android:layout_width="50dp"
+        android:id="@+id/etFriendCode"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvFriendCode"
-        android:textSize="24sp"
-        android:inputType="number"
-        android:maxLength="4"/>
-
-    <TextView
-        android:id="@+id/hyphen1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:textSize="24sp"
-        android:layout_below="@id/tvFriendCode"
-        android:layout_toEndOf="@id/etFriendCode1"/>
-
-    <EditText
-        android:id="@+id/etFriendCode2"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvFriendCode"
-        android:layout_toEndOf="@id/hyphen1"
-        android:inputType="number"
-        android:textSize="24sp"
-        android:maxLength="4"/>
-
-    <TextView
-        android:id="@+id/hyphen2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:textSize="24sp"
-        android:layout_toEndOf="@id/etFriendCode2"
-        android:layout_below="@id/tvFriendCode"/>
-
-    <EditText
-        android:id="@+id/etFriendCode3"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvFriendCode"
-        android:layout_toEndOf="@id/hyphen2"
-        android:inputType="number"
-        android:textSize="24sp"
-        android:maxLength="4"/>
+        />
 
     <Button
         android:id="@+id/btnSaveData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/etFriendCode2"
+        android:layout_below="@id/etFriendCode"
         android:onClick="saveData"
         android:text="Save"/>
 

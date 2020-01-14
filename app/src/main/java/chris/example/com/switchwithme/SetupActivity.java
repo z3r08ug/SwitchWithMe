@@ -1,31 +1,24 @@
 package chris.example.com.switchwithme;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
+import com.szagurskii.patternedtextwatcher.PatternedTextWatcher;
 
 public class SetupActivity extends AppCompatActivity
 {
     private FirebaseAuth mAuth;
-    private EditText etFriendCode1, etFriendCode2, etFriendCode3, etHandle;
+    private EditText etFriendCode, etHandle;
     private RadioButton btnMale, btnFemale;
     private String currentUserId;
     private DatabaseReference usersRef;
@@ -41,9 +34,16 @@ public class SetupActivity extends AppCompatActivity
         
         usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
         
-        etFriendCode1 = findViewById(R.id.etFriendCode1);
-        etFriendCode2 = findViewById(R.id.etFriendCode2);
-        etFriendCode3 = findViewById(R.id.etFriendCode3);
+        etFriendCode = findViewById(R.id.etFriendCode);
+        PatternedTextWatcher patternedTextWatcher = new PatternedTextWatcher.Builder("####-####-####")
+            .fillExtraCharactersAutomatically(true)
+            .deleteExtraCharactersAutomatically(true)
+            .specialChar("#")
+            .respectPatternLength(true)
+            .saveAllInput(false)
+            .build();
+        etFriendCode.addTextChangedListener(patternedTextWatcher);
+
         etHandle = findViewById(R.id.etHandle);
         
         btnMale = findViewById(R.id.btnMale);
@@ -53,8 +53,7 @@ public class SetupActivity extends AppCompatActivity
     public void saveData(View view)
     {
         String handle = etHandle.getText().toString();
-        String friendCode = etFriendCode1.getText().toString();
-        friendCode += "-" + etFriendCode2.getText().toString() + "-" + etFriendCode3.getText().toString();
+        String friendCode = etFriendCode.getText().toString();
         
         String gender = "";
         if (btnMale.isChecked())
